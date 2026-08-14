@@ -28,3 +28,17 @@ def check_missing_images(df):
     """Return the subset of rows whose image file does not exist on disk."""
     missing = df[~df["abs_path"].apply(os.path.exists)]
     return missing
+
+
+def plot_confusion_matrix(y_true, y_pred, labels, title="Confusion Matrix", save_path=None):
+    """Plot (and optionally save) a confusion matrix heatmap."""
+    cm = confusion_matrix(y_true, y_pred, labels=labels)
+    plt.figure(figsize=(7, 6))
+    sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=labels, yticklabels=labels)
+    plt.xlabel("Predicted label")
+    plt.ylabel("True label")
+    plt.title(title)
+    plt.tight_layout()
+    if save_path:
+        plt.savefig(save_path, dpi=150)
+    plt.show()
