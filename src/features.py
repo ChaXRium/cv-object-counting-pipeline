@@ -18,3 +18,15 @@ def extract_hog_features(gray_img, pixels_per_cell=(16, 16), cells_per_block=(2,
         feature_vector=True,
     )
     return features
+
+
+def extract_color_histogram(color_img, bins=(8, 8, 8)):
+    """
+    Extract a 3D colour histogram (in HSV space) from a colour image.
+    Captures overall colour distribution, e.g. gold/copper/silver tones,
+    which helps distinguish coin currencies.
+    """
+    hsv = cv2.cvtColor(color_img, cv2.COLOR_BGR2HSV)
+    hist = cv2.calcHist([hsv], [0, 1, 2], None, bins, [0, 180, 0, 256, 0, 256])
+    hist = cv2.normalize(hist, hist).flatten()
+    return hist
