@@ -1,8 +1,14 @@
+"""
+Shared helper functions: loading the dataset CSVs, resolving image paths,
+and small plotting helpers used across the pipeline.
+"""
+
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
+
 
 # Root folder where the train/ val/ test/ image folders live.
 # The CSVs store paths like "train\\all_coins\\xxxx.jpg", so IMAGE_ROOT
