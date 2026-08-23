@@ -38,16 +38,20 @@ first cell). Cut `epochs` and `imgsz` down in Section 7 if you're on CPU.
 
 ## 3. Add your data
 
-Create a folder for your coin images, e.g.:
+Arrange your 300 images into one subfolder per coin count — folder name = true
+count for every image inside it:
 
 ```
 data/coin_images/
-    IMG001.jpg
-    IMG002.jpg
+    1/     10 images, each with exactly 1 coin
+    2/     10 images, each with exactly 2 coins
     ...
+    29/    10 images, each with exactly 29 coins
 ```
 
 Update `DATA_DIR` in Section 1 of the notebook if you use a different path.
+Ground truth is derived automatically from the folder names — no manual
+counting needed.
 
 ## 4. Open and run in VS Code
 
@@ -57,12 +61,6 @@ Update `DATA_DIR` in Section 1 of the notebook if you use a different path.
 - Section 7 (YOLO training) is the slow one — expect a few minutes on a GPU,
   much longer on CPU. `yolov8n.pt` pretrained weights download automatically
   on first run (needs internet once).
-
-## 5. Before running Section 9 (evaluation)
-
-Hand-count the coins in a handful of your images and fill them into the
-`ground_truth` dict in Section 4 — this is what turns the final comparison
-table and chart into real numbers for your report's evaluation section.
 
 ## Troubleshooting
 
