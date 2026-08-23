@@ -1,19 +1,32 @@
+# Auto-generated YOLO dataset (raw + augmented pseudo-labelled images) - regenerable from data/ + the notebook
+coin_yolo_dataset/
 
-# Generated outputs (models, plots) — keep the folder but not large binaries
-outputs/*.joblib
-outputs/*.png
+# Training run outputs (checkpoints, logs, weights - can be large)
+coin_counter_runs/
+runs/
 
-# Python
+# Inference script output
+count_results/
+
+# Your raw dataset (usually you don't want 300 photos in git either - remove this line if you DO want them tracked)
+data/
+
+# Generated report charts (regenerable by re-running the notebook)
+evaluation_chart*.png
+mae_by_count.png
+
+# Python environment / cache
+venv/
 __pycache__/
 *.pyc
+
+# Jupyter
 .ipynb_checkpoints/
-*.egg-info/
 
-# Environments
-.venv/
-venv/
-env/
+# Model weights (large binary files - track separately with Git LFS if you need them in git)
+*.pt
+*.onnx
 
-# OS
+# OS junk
 .DS_Store
 Thumbs.db
