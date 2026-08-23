@@ -1,7 +1,3 @@
-# Actual image data (large, not committed — only CSV manifests are tracked)
-data/train/
-data/val/
-data/test/
 
 # Generated outputs (models, plots) — keep the folder but not large binaries
 outputs/*.joblib
