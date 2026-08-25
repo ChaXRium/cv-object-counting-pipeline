@@ -9,7 +9,7 @@ runs/
 count_results/
 
 # Your raw dataset (usually you don't want 300 photos in git either - remove this line if you DO want them tracked)
-data/
+#data/
 
 # Generated report charts (regenerable by re-running the notebook)
 evaluation_chart*.png
